@@ -14,13 +14,13 @@ def error_message():
 def get_principal():
     principal = input('What amount of money would you like to invest? \n> ')
     if principal.isdigit():
-        return int(principal)
+        return float(principal)
     else:
         error_message()
         return get_principal()
 
 def get_rate(principal):
-    rate = int(input('What would be the annual rate at which you would invest those ${amount}? (Please enter the rate as an integer, not as a decimal) \n> '.format(amount=principal)))
+    rate = float(input('What would be the annual rate at which you would invest those ${amount}? (Please enter the rate as an integer, not as a decimal) \n> '.format(amount=principal)))
     return rate
 
 def get_compounding():
