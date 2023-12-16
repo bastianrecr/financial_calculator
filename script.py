@@ -9,8 +9,16 @@ def financial_calculator():
     formatted_result = "{:,.2f}".format(result)
     print("After {time} years, your investment of ${principal} at a {rate}% annual interest rate, compounded {compounding} times per year, will be worth ${account}.".format(time=int(years), account=formatted_result, principal=formatted_principal, rate=rate, compounding=compounding))
 
+# Reusable Functions
 def error_message():
     print('Sorry, this input is not valid. Please make sure your input meets the requirements mentioned in the instructions.')
+
+def is_float(string):
+    try:
+        float(string)
+        return True
+    except ValueError:
+        return False
 
 def get_principal():
     principal = input('What amount of money would you like to invest? \n> ')
