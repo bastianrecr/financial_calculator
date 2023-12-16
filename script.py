@@ -5,8 +5,9 @@ def financial_calculator():
     compounding = get_compounding()
     years = get_years()
     result = compound_account(principal, rate, compounding, years)
+    formatted_principal = "{:,.2f}".format(principal)
     formatted_result = "{:,.2f}".format(result)
-    print("After {time} years, your investment of ${principal} at a {rate}% annual interest rate, compounded {compounding} times per year, will be worth ${account}.".format(time=years, account=formatted_result, principal=principal, rate=rate, compounding=compounding))
+    print("After {time} years, your investment of ${principal} at a {rate}% annual interest rate, compounded {compounding} times per year, will be worth ${account}.".format(time=int(years), account=formatted_result, principal=formatted_principal, rate=rate, compounding=compounding))
 
 def error_message():
     print('Sorry, this input is not valid. Please make sure your input meets the requirements mentioned in the instructions.')
@@ -20,7 +21,8 @@ def get_principal():
         return get_principal()
 
 def get_rate(principal):
-    rate = float(input('What would be the annual rate at which you would invest those ${amount}? (Please enter the rate as an integer, not as a decimal) \n> '.format(amount=principal)))
+    formatted_principal = "{:,.2f}".format(principal)
+    rate = float(input('What would be the annual rate at which you would invest those ${amount}? (Please enter the rate as an integer, not as a decimal) \n> '.format(amount=formatted_principal)))
     return rate
 
 def get_compounding():
