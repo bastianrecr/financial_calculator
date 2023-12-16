@@ -46,7 +46,7 @@ def get_compounding():
         return get_compounding()
 
 def get_years():
-    years = int(input('How many years will you keep this investment for? (Please enter an amount greater than or equal to zero)\n> '))
+    years = float(input('How many years will you keep this investment for? (Please enter an amount greater than or equal to zero)\n> '))
     if years >= 0:
         return years
     else:
