@@ -24,7 +24,7 @@ def get_compounding():
     daily_compounding = 365 # Days in a year
     monthly_compounding = 12 # Months in a year
     quarterly_compounding = 4 # Quarters in a year
-    semi_annual_compunding = 2 # Twice per year
+    semi_annual_compounding = 2 # Twice per year
     annual_compounding = 1 # Once per year
 
     if answer.lower() == 'a':
@@ -34,7 +34,7 @@ def get_compounding():
     elif answer.lower() == 'c':
         return quarterly_compounding
     elif answer.lower() == 'd':
-        return semi_annual_compunding
+        return semi_annual_compounding
     elif answer.lower() == 'e':
         return annual_compounding
     else:
