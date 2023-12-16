@@ -22,7 +22,7 @@ def is_float(string):
 
 def get_principal():
     principal = input('What amount of money would you like to invest? \n> ')
-    if principal.isdigit():
+    if principal.isdigit() or is_float(principal):
         return float(principal)
     else:
         error_message()
