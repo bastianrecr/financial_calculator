@@ -12,8 +12,12 @@ def error_message():
     print('Sorry, this input is not valid. Please make sure your input meets the requirements mentioned in the instructions.')
 
 def get_principal():
-    principal = int(input('What amount of money would you like to invest? \n> '))
-    return principal
+    principal = input('What amount of money would you like to invest? \n> ')
+    if principal.isdigit():
+        return int(principal)
+    else:
+        error_message()
+        return get_principal()
 
 def get_rate(principal):
     rate = int(input('What would be the annual rate at which you would invest those ${amount}? (Please enter the rate as an integer, not as a decimal) \n> '.format(amount=principal)))
