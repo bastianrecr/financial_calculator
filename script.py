@@ -30,8 +30,12 @@ def get_principal():
 
 def get_rate(principal):
     formatted_principal = "{:,.2f}".format(principal)
-    rate = float(input('What would be the annual rate at which you would invest those ${amount}? (Please enter the rate as an integer, not as a decimal) \n> '.format(amount=formatted_principal)))
-    return rate
+    rate = input('What would be the annual rate at which you would invest those ${amount}? (Please enter the rate as an integer, not as a decimal) \n> '.format(amount=formatted_principal))
+    if rate.isdigit() or is_float(rate):
+        return float(rate)
+    else:
+        error_message()
+        return get_rate(principal)
 
 def get_compounding():
     answer = input('How often will interest be compounded? \n[a] Daily compounding \n[b] Monthly compounding \n[c] Quarterly Compounding \n[d] Semi-Annual Compounding \n[e] Annual Compounding \n> ')
